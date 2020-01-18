@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+h5{
+    color:black;
+}
+p{
+    color: rgb(0, 0, 0, 0.6);
+}
+img {
+    /*max-height: 100%;
+    max-width: 100%;*/
+}
+.container{
+    padding-top: 20px;
+}
