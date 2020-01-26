@@ -17,6 +17,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { AnimalsComponent } from './components/animals/animals.component';
+import { AnimalComponent } from './components/animal/animal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AnimalsComponent } from './components/animals/animals.component';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    AnimalsComponent
+    AnimalsComponent,
+    AnimalComponent
   ],
   imports: [
     BrowserModule,

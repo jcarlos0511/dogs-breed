@@ -2,12 +2,15 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
-import { AnimalsComponent } from './components/animals/animals.component'
+import { AnimalsComponent } from './components/animals/animals.component';
+import { AnimalComponent } from './components/animal/animal.component';
+
 
 const app_routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'animals', component: AnimalsComponent},
+    { path: 'animal/:id', component: AnimalComponent},
     { path: '**', pathMatch:'full', redirectTo:'home' },
 
     //{ path: 'path/:routeParam', component: MyComponent },
