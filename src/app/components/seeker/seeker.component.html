@@ -1,3 +1,14 @@
+<h1>Search: <small>{{ termino }}</small></h1>
+<hr>
+
+<div class="row" *ngIf="animals.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            {{ termino }} was not found.
+        </div>
+    </div>
+</div>
+
 <div class="card-columns">
     <div class="card" *ngFor="let animal of animals; let i = index">
         <img class="card-img-top" [src]="animal.img" alt="Card image cap">

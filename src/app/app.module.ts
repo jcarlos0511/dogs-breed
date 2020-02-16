@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { AnimalComponent } from './components/animal/animal.component';
+import { SeekerComponent } from './components/seeker/seeker.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AnimalComponent } from './components/animal/animal.component';
     HomeComponent,
     AboutComponent,
     AnimalsComponent,
-    AnimalComponent
+    AnimalComponent,
+    SeekerComponent
   ],
   imports: [
     BrowserModule,

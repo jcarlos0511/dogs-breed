@@ -12,6 +12,28 @@ export class AnimalsService {
     return this.animals;
   }
 
+  //for ActivatedRoute
+
+  getAnimal( idx: string ){
+    return this.animals[idx];
+  }
+
+  //for search animal
+  searchAnimal( termino:string ){
+
+    let animalArr: Animals[] = [];
+    termino = termino.toLowerCase();
+
+    for( let animal of this.animals){
+
+      let title = animal.title.toLowerCase();
+      if( title.indexOf( termino ) >= 0 ){
+        animalArr.push( animal );
+      }
+    }
+    return animalArr;
+  }
+
   constructor() {}
 }
 
