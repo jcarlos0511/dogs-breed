@@ -10,13 +10,5 @@
 </div>
 
 <div class="card-columns">
-    <div class="card" *ngFor="let animal of animals; let i = index">
-        <img class="card-img-top" [src]="animal.img" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{animal.title}}</h5>
-            <p class="card-text">{{animal.description}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-        <a [routerLink]="['/animal', i]" class="btn btn-outline-primary btn-block">See more...</a>
-    </div>
+    <app-animal-card [animal]="animal" [index] = "animal.idx" *ngFor="let animal of animals"></app-animal-card>
 </div>

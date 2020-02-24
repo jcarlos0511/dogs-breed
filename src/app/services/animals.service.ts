@@ -3,9 +3,22 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class AnimalsService {
   private animals: Animals[] = [
-    { title: "tiger", description: "Mom tiger and baby tiger" , img:"assets/img/adult-and-cub-tiger-on-snowfield-near-bare-trees-39629.jpg"  },
-    { title: "alligator", description: "black alligator" ,img:'assets/img/black-alligator-on-water-1386560.jpg'},
-    { title: "Hercules insect", description: "Scarabage" , img:'assets/img/brown-beetle-53988.jpg'}
+    {
+      title: "tiger",
+      description: "Mom tiger and baby tiger",
+      img:
+        "assets/img/adult-and-cub-tiger-on-snowfield-near-bare-trees-39629.jpg"
+    },
+    {
+      title: "alligator",
+      description: "black alligator",
+      img: "assets/img/black-alligator-on-water-1386560.jpg"
+    },
+    {
+      title: "Hercules insect",
+      description: "Scarabage",
+      img: "assets/img/brown-beetle-53988.jpg"
+    }
   ];
 
   getAnimals() {
@@ -14,21 +27,22 @@ export class AnimalsService {
 
   //for ActivatedRoute
 
-  getAnimal( idx: string ){
+  getAnimal(idx: string) {
     return this.animals[idx];
   }
 
   //for search animal
-  searchAnimal( termino:string ){
-
+  searchAnimal(termino: string): Animals[] {
     let animalArr: Animals[] = [];
     termino = termino.toLowerCase();
 
-    for( let animal of this.animals){
+    for ( let i = 0; i < this.animals.length; i ++ ) {
 
+      let animal = this.animals[i];
       let title = animal.title.toLowerCase();
-      if( title.indexOf( termino ) >= 0 ){
-        animalArr.push( animal );
+      if (title.indexOf(termino) >= 0) {
+        animal.idx = i;
+        animalArr.push(animal);
       }
     }
     return animalArr;
@@ -41,4 +55,5 @@ export interface Animals {
   title: string;
   description: string;
   img: any;
+  idx?: number;
 }

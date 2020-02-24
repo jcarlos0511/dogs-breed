@@ -19,6 +19,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { AnimalComponent } from './components/animal/animal.component';
 import { SeekerComponent } from './components/seeker/seeker.component';
+import { AnimalCardComponent } from './components/animal-card/animal-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SeekerComponent } from './components/seeker/seeker.component';
     AboutComponent,
     AnimalsComponent,
     AnimalComponent,
-    SeekerComponent
+    SeekerComponent,
+    AnimalCardComponent
   ],
   imports: [
     BrowserModule,
