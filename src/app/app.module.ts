@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-//services
-
-import { AnimalsService } from '../app/services/animals.service'
+import { HttpClientModule } from '@angular/common/http';
 
 
 //routes
 
-import { app_routing } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { routes } from '../app/app.routes';
+
+
 
 //components
 
@@ -34,10 +34,12 @@ import { AnimalCardComponent } from './components/animal-card/animal-card.compon
   ],
   imports: [
     BrowserModule,
-    app_routing
+    HttpClientModule,
+    RouterModule.forRoot( routes, { useHash: true}),
+
   ],
   providers: [
-    AnimalsService
+    
   ],
   bootstrap: [AppComponent]
 })

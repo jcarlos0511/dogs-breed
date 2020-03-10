@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { AnimalsService } from "../../services/animals.service";
 
 @Component({
   selector: "app-animal",
@@ -12,13 +11,8 @@ export class AnimalComponent {
 
   constructor(
     private _activadedRoute: ActivatedRoute,
-    private _animalsService: AnimalsService
   ) {
-    this._activadedRoute.params.subscribe(params => {
-      //console.log(params['id']);
-      this.animal = this._animalsService.getAnimal(params['id']);
-      //console.log(this.animal);
-    });
+    
   }
 }
 

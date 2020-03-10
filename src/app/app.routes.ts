@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router'
+import { Routes } from '@angular/router'
 
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -8,7 +8,7 @@ import { SeekerComponent } from './components/seeker/seeker.component';
 
 
 
-const app_routes: Routes = [
+export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'animals', component: AnimalsComponent},
@@ -22,8 +22,4 @@ const app_routes: Routes = [
     //{ path: 'oldPath', redirectTo: '/staticPath' },
     //{ path: ..., component: ..., data: { message: 'Custom' }
 ];
-
-
-export const app_routing = RouterModule.forRoot(app_routes);
-
 

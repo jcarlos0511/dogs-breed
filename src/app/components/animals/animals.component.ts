@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { AnimalsService, Animals } from "../../services/animals.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,16 +7,15 @@ import { Router } from "@angular/router";
   styles: []
 })
 export class AnimalsComponent implements OnInit {
-  animals: Animals[] = [];
+  
 
-  constructor(
-    private _animalsService: AnimalsService,
+  constructor( 
+    
     private _router: Router
   ) {}
 
   ngOnInit() {
-    this.animals = this._animalsService.getAnimals();
-    //console.log(this.animals);
+   
   }
 
   seeAnimal(idx: number) {
