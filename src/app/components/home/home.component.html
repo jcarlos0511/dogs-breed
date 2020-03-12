@@ -10,10 +10,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let dog of dogs">
-          <th scope="row"  ></th>
-          <td>{{ dog }}</td>
-          <td></td>
+        <tr *ngFor="let dog of dogs, let i = index">
+          <th scope="row" >{{i+1}}</th>
+          <td>{{ dog | titlecase }}</td>
+          <td>a</td>
           <td>@mdo</td>
         </tr>
       </tbody>
