@@ -10,12 +10,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let dog of dogs, let i = index">
-          <th scope="row" >{{i+1}}</th>
-          <td>{{ dog | titlecase }}</td>
-          <td>a</td>
-          <td>@mdo</td>
+        <tr *ngFor="let breed of breeds, let i = index">
+          <th scope="row">{{i+1}}</th><!--[routerLink]="['/animals']"-->
+          <td><a (click)="getBreed(idx)" #idx  >{{ breed | titlecase }}</a></td>
         </tr>
+
       </tbody>
     </table>
   </div>
