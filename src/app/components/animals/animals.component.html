@@ -1,5 +1,13 @@
-<div class="card-columns">
-    <!---->
-    <app-animal-card (animalSelect) ="seeAnimal( $event )" ></app-animal-card>
-
+<div class="row m-5">
+    <div class="card animated fadeIn fast" *ngFor="let dog of dogs.message">
+        <!--[src]="animal.img"-->
+        <img class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ dog | titlecase}}</h5>
+            <p class="card-text">Sub-breed</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <!--<a [routerLink]="['/animal', i]" class="btn btn-outline-primary btn-block">See more...</a>-->
+        <button type="button" class="btn btn-outline-primary btn-block">See more...</button>
+    </div>
 </div>

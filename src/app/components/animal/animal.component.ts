@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+
 
 @Component({
   selector: "app-animal",
@@ -7,12 +7,11 @@ import { ActivatedRoute } from "@angular/router";
   styles: []
 })
 export class AnimalComponent {
-  animal: any = {};
+  
 
   constructor(
-    private _activadedRoute: ActivatedRoute,
-  ) {
     
+  ) {
+  
   }
 }
-

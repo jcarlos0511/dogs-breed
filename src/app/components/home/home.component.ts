@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { DogsService } from "src/app/services/dogs.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-home",
@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   breeds: any[] = [];
   subBreeds: any[] = [];
 
-  constructor(private http: HttpClient, private dogService: DogsService) {
+  constructor(private router: Router, private dogService: DogsService) {
     this.seeBreed();
     this.seeSubBreed();
   }
@@ -32,6 +32,9 @@ export class HomeComponent implements OnInit {
   }
 
   getBreed(idx:string){
+    
     console.log(idx);
+    this.router.navigate( ['/animals',idx]);
+    
   }
 }

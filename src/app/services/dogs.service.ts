@@ -13,4 +13,8 @@ export class DogsService {
     return this.http.get(url + value);
   }
 
+  getDog(value: string){
+    return this.getQuery(`breed/${value}/list`);
+  }
+
 }
