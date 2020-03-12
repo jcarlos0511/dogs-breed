@@ -16,5 +16,8 @@ export class DogsService {
   getDog(value: string){
     return this.getQuery(`breed/${value}/list`);
   }
+  getImgBreed(value: string){
+    return this.getQuery(`breed/${value}/images`);
+  }
 
 }

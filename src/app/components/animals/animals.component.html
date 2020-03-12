@@ -1,10 +1,15 @@
 <div class="row m-5">
-    <div class="card animated fadeIn fast" *ngFor="let dog of dogs.message">
-        <!--[src]="animal.img"-->
-        <img class="card-img-top" alt="Card image cap">
+    <div class="col-4" *ngFor="let name of names.message">
+        <h1>Breed: <small>{{ name }}</small></h1>
+    </div>
+    <br><br>
+
+
+    <div class="card animated fadeIn fast" *ngFor="let image of images.message">
+
+        <img class="card-img-top" [src]="image" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">{{ dog | titlecase}}</h5>
-            <p class="card-text">Sub-breed</p>
+            <h5 class="card-title"></h5>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
         <!--<a [routerLink]="['/animal', i]" class="btn btn-outline-primary btn-block">See more...</a>-->

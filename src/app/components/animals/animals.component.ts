@@ -10,7 +10,8 @@ import { DogsService } from "src/app/services/dogs.service";
 })
 export class AnimalsComponent  {
   
-  dogs: any = [];
+  names: any = [];
+  images: any = [];
   constructor( 
     
     private _activadedRoute: ActivatedRoute,
@@ -20,7 +21,15 @@ export class AnimalsComponent  {
       //console.log(data['id']);
       this.dogService.getDog(data["id"]).subscribe(data => {
         console.log(data);
-        this.dogs=data;
+        this.names=data;
+      });
+    });
+
+    this._activadedRoute.params.subscribe(data => {
+      //console.log(data['id']);
+      this.dogService.getImgBreed(data["id"]).subscribe(data => {
+        console.log(data);
+        this.images=data;
       });
     });
   }
