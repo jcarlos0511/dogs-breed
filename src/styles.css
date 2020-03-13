@@ -12,10 +12,7 @@ a{
    
 }
 
-.container{
-    padding-top: 20px;
-    
-}
+
 
 /* animations */
 
@@ -45,4 +42,17 @@ a{
 
 .fadeIn {
   animation-name: fadeIn;
+}
+
+.center {
+  justify-content: center;
+}
+
+/* responsive */
+@media only screen and (max-width: 425px)  {
+
+  img .card-img-top{
+    width: 8rem !important; 
+    height: 8rem !important;
+  }
 }
