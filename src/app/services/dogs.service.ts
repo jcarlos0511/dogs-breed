@@ -16,6 +16,10 @@ export class DogsService {
   getDog(value: string){
     return this.getQuery(`breed/${value}/list`);
   }
+
+  getImgRandom(value: string){
+    return this.getQuery(`breed/${value}/images/random`);
+  }
   getImgBreed(value: string){
     return this.getQuery(`breed/${value}/images`);
   }
