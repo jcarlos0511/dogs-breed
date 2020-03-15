@@ -13,8 +13,11 @@ export class DogsService {
     return this.http.get(url + value);
   }
 
-  getDog(value: string){
+  getBreed(value: string){
     return this.getQuery(`breed/${value}/list`);
+  }
+  getSubBreed(value:string){
+    return this.getQuery(`breed/${value}/images`);
   }
 
   getImgRandom(value: string){

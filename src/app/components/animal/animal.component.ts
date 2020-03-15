@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from '@angular/router';
+import { DogsService } from 'src/app/services/dogs.service';
+
 
 
 @Component({
@@ -7,11 +10,19 @@ import { Component } from "@angular/core";
   styles: []
 })
 export class AnimalComponent {
+
+  images: any = [];
   
 
-  constructor(
+  constructor( private activatedRoute: ActivatedRoute, private dogService: DogsService
     
   ) {
-  
+  this.activatedRoute.params.subscribe( data =>{
+    //console.log(data['id']);
+    this.dogService.getSubBreed(data['id']).subscribe((data:any)=>{
+      console.log(data.message);
+      this.images = data.message;
+    });
+  });
   }
 }

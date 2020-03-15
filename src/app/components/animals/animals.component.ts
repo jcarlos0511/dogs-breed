@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DogsService } from "src/app/services/dogs.service";
 
 @Component({
@@ -14,14 +14,14 @@ export class AnimalsComponent implements OnInit {
   images: any = [];
   subBreeds: any = [];
   constructor( 
-    
+    private router: Router,
     private _activadedRoute: ActivatedRoute,
     private dogService: DogsService
   ) {
     //getting id for parameter
     this._activadedRoute.params.subscribe(data => {
       //console.log(data['id']);
-      this.dogService.getDog(data["id"]).subscribe((data:any) => {
+      this.dogService.getBreed(data["id"]).subscribe((data:any) => {
         console.log(data.message);
         //getting subBreeds for every breed
         this.subBreeds=data.message;
@@ -48,6 +48,11 @@ export class AnimalsComponent implements OnInit {
       
     };
     console.log(this.dog.id);
+  }
+
+  seeSubBreed(idx:string){
+    console.log(idx);
+    this.router.navigate( ['/animal',idx]);
   }
   
 }
