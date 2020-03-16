@@ -31,6 +31,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /* get wikipedia API*/
+
+  /*seeDescription(id: string ){
+    this.dogService.getQueryDes(id + '&utf8=&format=json').subscribe(data=>{
+      console.log(data);
+    });
+  }*/
+
+  /* */
+
   getBreed(idx:string){
     
     console.log(idx);

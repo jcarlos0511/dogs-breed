@@ -13,6 +13,16 @@ export class DogsService {
     return this.http.get(url + value);
   }
 
+  removeHtml(value:string){
+    return value.replace(/<\/?[^>]+>/gi, '');
+  }
+
+  getQueryDes(value: string){
+    const url ="https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=";
+    const url2 = "&utf8=&format=json&origin=*";
+    return this.http.get(url + value + url2 );
+  }
+
   getBreed(value: string){
     return this.getQuery(`breed/${value}/list`);
   }

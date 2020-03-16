@@ -13,6 +13,7 @@ export class AnimalsComponent implements OnInit {
   dog: {id:string}; //getting string (id) by url(parameter)
   images: any = [];
   subBreeds: any = [];
+  descriptions: any = [];
   constructor( 
     private router: Router,
     private _activadedRoute: ActivatedRoute,
@@ -21,10 +22,20 @@ export class AnimalsComponent implements OnInit {
     //getting id for parameter
     this._activadedRoute.params.subscribe(data => {
       //console.log(data['id']);
-      this.dogService.getBreed(data["id"]).subscribe((data:any) => {
-        console.log(data.message);
+      this.dogService.getBreed(data["id"] ).subscribe((data:any) => {
+        //console.log(data.message);
         //getting subBreeds for every breed
         this.subBreeds=data.message;
+      });
+    });
+
+    //getting description of wikipedia
+    this._activadedRoute.params.subscribe(data=>{
+      this.dogService.getQueryDes(data['id']).subscribe((data:any)=>{
+        //console.log( data.query.search[0].snippet);
+        //adding snippet of first array.snippet 
+        this.descriptions = this.dogService.removeHtml(data.query.search[0].snippet);
+        console.log(this.descriptions);
       });
     });
 
@@ -50,6 +61,7 @@ export class AnimalsComponent implements OnInit {
     console.log(this.dog.id);
   }
 
+ 
   seeSubBreed(idx:string){
     console.log(idx);
     this.router.navigate( ['/animal',idx]);
