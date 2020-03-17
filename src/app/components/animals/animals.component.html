@@ -1,13 +1,26 @@
 <div class="row mt-5 center">
-    <h2> {{ dog.id | titlecase }} </h2>
+  <h2> {{ dog.id | titlecase }} </h2>
 </div>
 <div>
-    <h3>Subreed: {{subBreeds.length}}</h3>
+  <h4 class="text-center py-1">Subreed: {{subBreeds.length}}</h4>
 </div>
-<div *ngFor="let subBreed of subBreeds, let i=index">
-    <a (click)="seeSubBreed(dog.id+'/'+subBreed)">{{dog.id}}/{{ subBreed }}</a>
+
+
+<div class="table-responsive">
+  <table class="table justify-content-center">
+    <ul class="list-group list-group-horizontal text-center">
+      <li class="list-group-item" *ngFor="let subBreed of subBreeds, let i=index">
+        <a class="dropdown-item" (click)="seeSubBreed(dog.id+'/'+ subBreed)">{{ subBreed | titlecase }}</a>
+      </li>
+    </ul>
+  </table>
 </div>
-<div class="row mt-5 center">
+
+
+
+
+
+<!--<div class="row mt-5 center">
 
     <div class="card animated fadeIn fast m-2">
 
@@ -16,22 +29,21 @@
             <h5 class="card-title"></h5>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <!--<a [routerLink]="['/animal', i]" class="btn btn-outline-primary btn-block">See more...</a>-->
     </div>
-</div>
+    <div>-->
 
-<div class="card mb-3 " >
-    <div class="row center">
-      <div class="col-md-4">
-        <img [src]="images.message" style="width: 16rem; height: 16rem;" class=" mx-auto d-block" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{dog.id}}</h5>
-          <p class="card-text">{{descriptions}}.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <button type="button" class="btn btn-outline-primary " >See more...</button>
-        </div>
+<div class="card mb-3 ">
+  <div class="row center">
+    <div class="col-md-4">
+      <img class=" mx-auto d-block" [src]="images.message" style="width: 16rem; height: 16rem;"  alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{dog.id}}</h5>
+        <p class="card-text">{{descriptions}}.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <button type="button" class="btn btn-outline-primary ">See more...</button>
       </div>
     </div>
   </div>
+</div>

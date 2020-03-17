@@ -19,7 +19,7 @@ export class DogsService {
 
   getQueryDes(value: string){
     const url ="https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=";
-    const url2 = "&utf8=&format=json&origin=*";
+    const url2 = "%20dog&utf8=&format=json&origin=*";
     return this.http.get(url + value + url2 );
   }
 
