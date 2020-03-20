@@ -5,15 +5,14 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Breed</th>
-          <th scope="col"> Preview</th>
-          
+          <th scope="col"> Preview</th>       
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let breed of breeds, let i = index">
           <th scope="row">{{i+1}}</th><!--[routerLink]="['/animals']"-->
           <td>{{ breed | titlecase }}</td>
-          <td><a class="btn btn-secondary btn-sm" (click)="getBreed(breed)" > ... </a></td>
+          <td><a class="btn btn-secondary btn-sm white" (click)="getBreed(breed)" > ... </a></td>
         </tr>
 
       </tbody>

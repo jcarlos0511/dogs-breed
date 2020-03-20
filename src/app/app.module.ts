@@ -15,22 +15,22 @@ import { routes } from '../app/app.routes';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { AnimalComponent } from './components/animal/animal.component';
 import { SeekerComponent } from './components/seeker/seeker.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    AboutComponent,
     AnimalsComponent,
     AnimalComponent,
     SeekerComponent,
-    AnimalCardComponent
+    AnimalCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

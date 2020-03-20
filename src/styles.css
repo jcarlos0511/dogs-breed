@@ -8,10 +8,12 @@ p{
 
 a{
   cursor: pointer;
- 
    
 }
 
+.white{
+  color: white !important;
+}
 
 
 /* animations */

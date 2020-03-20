@@ -13,6 +13,7 @@ export class DogsService {
     return this.http.get(url + value);
   }
 
+  //remove the html that comes in the wikipedia API
   removeHtml(value:string){
     return value.replace(/<\/?[^>]+>/gi, '');
   }

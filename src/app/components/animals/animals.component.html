@@ -1,22 +1,20 @@
-<div class="row mt-5 center">
+<div class="row mt-3 center">
   <h2> {{ dog.id | titlecase }} </h2>
 </div>
 <div>
-  <h4 class="text-center py-1">Subreed: {{subBreeds.length}}</h4>
+  <h4 class="text-center py-1">Sub-Breed: {{subBreeds.length}}</h4>
 </div>
 
 
 <div class="table-responsive">
-  <table class="table justify-content-center">
-    <ul class="list-group list-group-horizontal text-center">
+  <table class="table ">
+    <ul class="list-group list-group-horizontal justify-content-center">
       <li class="list-group-item" *ngFor="let subBreed of subBreeds, let i=index">
         <a class="dropdown-item" (click)="seeSubBreed(dog.id+'/'+ subBreed)">{{ subBreed | titlecase }}</a>
       </li>
     </ul>
   </table>
 </div>
-
-
 
 
 
@@ -32,14 +30,14 @@
     </div>
     <div>-->
 
-<div class="card mb-3 ">
+<div class="card mb-5">
   <div class="row center">
     <div class="col-md-4">
       <img class=" mx-auto d-block" [src]="images.message" style="width: 16rem; height: 16rem;"  alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{dog.id}}</h5>
+        <h5 class="card-title">{{dog.id | titlecase }}</h5>
         <p class="card-text">{{descriptions}}.</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         <button type="button" class="btn btn-outline-primary ">See more...</button>
