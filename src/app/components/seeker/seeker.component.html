@@ -1,7 +1,7 @@
 <h1>Search: <small>{{ termino }}</small></h1>
 <hr>
 
-<div class="row" *ngIf="animals.length == 0">
+<div class="row" *ngIf="breeds.length == 0">
     <div class="col-md-12">
         <div class="alert alert-info" role="alert">
             {{ termino }} was not found.
@@ -10,5 +10,5 @@
 </div>
 
 <div class="card-columns">
-    <app-animal-card [animal]="animal" [index] = "animal.idx" *ngFor="let animal of animals"></app-animal-card>
+    <app-animal-card [animal]="" [index] = "" *ngFor="let breed of breeds"></app-animal-card>
 </div>

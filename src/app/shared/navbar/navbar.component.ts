@@ -8,7 +8,12 @@ import { Router } from "@angular/router";
   styles: []
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router) {}
+
+  
+  constructor(private router: Router) {
+
+    
+  }
 
   ngOnInit() {}
 
@@ -16,4 +21,6 @@ export class NavbarComponent implements OnInit {
     console.log(termino);
     this.router.navigate(["/seeker", termino]);
   }
+
+  
 }

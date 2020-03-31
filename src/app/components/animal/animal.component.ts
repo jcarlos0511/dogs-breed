@@ -14,9 +14,8 @@ export class AnimalComponent {
   images: any = [];
   
 
-  constructor( private activatedRoute: ActivatedRoute, private dogService: DogsService
-    
-  ) {
+  constructor( private activatedRoute: ActivatedRoute, private dogService: DogsService ) {
+
   this.activatedRoute.params.subscribe( data =>{
     //console.log(data['id']);
     this.dogService.getSubBreed(data['id']).subscribe((data:any)=>{
@@ -24,5 +23,6 @@ export class AnimalComponent {
       this.images = data.message;
     });
   });
+  
   }
 }
