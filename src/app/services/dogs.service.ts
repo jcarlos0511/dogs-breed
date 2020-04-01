@@ -24,6 +24,11 @@ export class DogsService {
     return this.http.get(url + value + url2 );
   }
 
+  seeWiki( id: any ){
+    const url = `https://en.wikipedia.org/?curid=${id}`;
+    return url;
+  }
+
   getBreed(value: string){
     return this.getQuery(`breed/${value}/list`);
   }

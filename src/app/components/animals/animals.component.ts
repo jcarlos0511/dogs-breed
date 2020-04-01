@@ -14,6 +14,7 @@ export class AnimalsComponent implements OnInit {
   images: any = [];
   subBreeds: any = [];
   descriptions: any = [];
+  url: any = "";
   constructor( 
     private router: Router,
     private _activadedRoute: ActivatedRoute,
@@ -32,15 +33,17 @@ export class AnimalsComponent implements OnInit {
     //getting description of wikipedia
     this._activadedRoute.params.subscribe(data=>{
       this.dogService.getQueryDes(data['id']).subscribe((data:any)=>{
-        //console.log( data.query.search[0].snippet);
-        //adding snippet of first array.snippet 
+        console.log( data.query.search);
+        //adding snippet of first array.snippet for descriptions
         this.descriptions = this.dogService.removeHtml(data.query.search[0].snippet);
         console.log(this.descriptions);
+
+        this.url = data.query.search[0].pageid;
+        // console.log(this.url);
       });
+
+      
     });
-
-    
-
 
     //getting images
     this._activadedRoute.params.subscribe(data => {
@@ -50,7 +53,15 @@ export class AnimalsComponent implements OnInit {
         this.images=data;
       });
     });
-  }
+
+  } 
+  
+  seeWiki(idPage:any){
+        
+        this. url =  this.dogService.seeWiki(idPage);
+        console.log(this.url);
+         
+       }
 
   //getting string (id) by url(parameter)
   ngOnInit(){
