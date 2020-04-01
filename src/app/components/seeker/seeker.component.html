@@ -1,7 +1,14 @@
-<h1>Search: <small>{{ termino }}</small></h1>
-<hr>
 
-<div class="row" *ngIf="breeds.length == 0">
+
+<div class="row mt-5">
+    <div class="container">
+      <h2>Search: <small>{{ termino | titlecase }}</small></h2>  
+    </div>
+    
+<hr>
+</div>
+
+<div class="row" *ngIf="breeds.length === 0">
     <div class="col-md-12">
         <div class="alert alert-info" role="alert">
             {{ termino }} was not found.
@@ -9,6 +16,15 @@
     </div>
 </div>
 
-<div class="card-columns">
-    <app-animal-card [animal]="" [index] = "" *ngFor="let breed of breeds"></app-animal-card>
+<div class="row mt-5 center">
+
+    <div class="card animated fadeIn fast m-2" *ngFor="let breed of breeds">
+
+        <img class="card-img-fluid" style="width: 16rem; height: 16rem;" [src]="breed" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <!--<a [routerLink]="['/animal', i]" class="btn btn-outline-primary btn-block">See more...</a>-->
+    </div>
 </div>
