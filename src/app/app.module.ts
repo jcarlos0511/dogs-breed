@@ -20,6 +20,7 @@ import { AnimalComponent } from './components/animal/animal.component';
 import { SeekerComponent } from './components/seeker/seeker.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     AnimalComponent,
     SeekerComponent,
     AnimalCardComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

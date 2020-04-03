@@ -15,11 +15,16 @@ export class AnimalsComponent implements OnInit {
   subBreeds: any = [];
   descriptions: any = [];
   url: any = "";
+  loading: boolean;
+
   constructor( 
     private router: Router,
     private _activadedRoute: ActivatedRoute,
     private dogService: DogsService
   ) {
+
+    this.loading = true;
+
     //getting id for parameter
     this._activadedRoute.params.subscribe(data => {
       //console.log(data['id']);
@@ -27,6 +32,7 @@ export class AnimalsComponent implements OnInit {
         //console.log(data.message);
         //getting subBreeds for every breed
         this.subBreeds=data.message;
+        this.loading = false;
       });
     });
 

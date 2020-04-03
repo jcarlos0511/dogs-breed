@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
   searchAnimal(termino: string) {
     console.log(termino);
     this.router.navigate(["/seeker", termino]);
+
   }
 
   

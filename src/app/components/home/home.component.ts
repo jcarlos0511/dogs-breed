@@ -9,8 +9,10 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   breeds: any[] = [];
   subBreeds: any[] = [];
+  loading: boolean;
 
   constructor(private router: Router, private dogService: DogsService) {
+    this.loading = true;
     this.seeBreed();
     this.seeSubBreed();
   }
@@ -22,6 +24,7 @@ export class HomeComponent implements OnInit {
       console.log(data.message);
       return (this.breeds = data.message);
     });
+    this.loading = false;
   }
 
   seeSubBreed() {
@@ -29,6 +32,7 @@ export class HomeComponent implements OnInit {
       console.log(data.message);
       return (this.subBreeds = data.message);
     });
+    this.loading = false;
   }
 
   /* get wikipedia API*/
