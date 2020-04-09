@@ -46,6 +46,9 @@ export class AnimalsComponent implements OnInit {
 
         this.url = data.query.search[0].pageid;
         // console.log(this.url);
+
+        this.loading = false;
+        
       });
 
       
