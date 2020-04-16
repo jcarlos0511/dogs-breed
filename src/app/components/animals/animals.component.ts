@@ -39,10 +39,10 @@ export class AnimalsComponent implements OnInit {
     //getting description of wikipedia
     this._activadedRoute.params.subscribe(data=>{
       this.dogService.getQueryDes(data['id']).subscribe((data:any)=>{
-        console.log( data.query.search);
+        //console.log( data.query.search);
         //adding snippet of first array.snippet for descriptions
         this.descriptions = this.dogService.removeHtml(data.query.search[0].snippet);
-        console.log(this.descriptions);
+        //console.log(this.descriptions);
 
         this.url = data.query.search[0].pageid;
         // console.log(this.url);

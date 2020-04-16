@@ -19,7 +19,7 @@ export class AnimalComponent {
     this.activatedRoute.params.subscribe(data => {
       //console.log(data['id']);
       this.dogService.getSubBreed(data["id"]).subscribe((data: any) => {
-        console.log(data.message);
+        //console.log(data.message);
         this.images = data.message;
         this.loading = false;
       });

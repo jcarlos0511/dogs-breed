@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   seeBreed() {
     this.dogService.getQuery("breeds/list").subscribe((data: any) => {
-      console.log(data.message);
+      //console.log(data.message);
       return (this.breeds = data.message);
     });
     this.loading = false;
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   seeSubBreed() {
     this.dogService.getQuery("breeds/list/all").subscribe((data: any) => {
-      console.log(data.message);
+      //console.log(data.message);
       return (this.subBreeds = data.message);
     });
     this.loading = false;
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
 
   getBreed(idx:string){
     
-    console.log(idx);
+    //console.log(idx);
     this.router.navigate( ['/animals',idx]);
     
   }
