@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app-server",
+    "module": "commonjs",
+    "types": [
+      "node"
+    ]
+  },
+  "files": [
+    "src/dist/spa-animals.ts",
+    "server.ts"
+  ],
+  "angularCompilerOptions": {
+    "entryModule": "./src/dist/spa-animals/dist/spa-animals#AppServerModule"
+  }
+}

@@ -35,7 +35,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
     LoadingComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     RouterModule.forRoot( routes, { useHash: true}),
 
